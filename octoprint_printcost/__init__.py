@@ -25,7 +25,8 @@ class PrintCost(octoprint.plugin.StartupPlugin,
 
     def get_assets(self):
         return dict(
-            js=["js/printcost.js","jquery.flot.pie.js", "jquery.flot.time.js", "jquery.flot.stack.js", "js/bootstrap-editable.js", "js/knockout.x-editable.js"]
+            js=["js/printcost.js","jquery.flot.pie.js", "jquery.flot.time.js", "jquery.flot.stack.js", "js/bootstrap-editable.js", "js/knockout.x-editable.js"],
+            css=["css/bootstrap-editable.css", "css/printcost.css"]
         )
 
 # If you want your plugin to be registered within OctoPrint under a different name than what you defined in setup.py
