@@ -11,7 +11,7 @@ class PrintCost(octoprint.plugin.StartupPlugin,
                 octoprint.plugin.TemplatePlugin,
                 octoprint.plugin.SettingsPlugin):
     def on_after_startup(self):
-        self._logger.info("Print Cost loaded (more: %d)" % self._settings.get(["cost"]))
+        self._logger.info("Print Cost loaded (more: %s)" % self._settings.get(["cost"]))
 
     def get_settings_defaults(self):
         return dict(cost=0.0666)
