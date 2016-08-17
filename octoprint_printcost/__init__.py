@@ -9,7 +9,8 @@ import octoprint.plugin
 
 class PrintCost(octoprint.plugin.StartupPlugin,
                 octoprint.plugin.TemplatePlugin,
-                octoprint.plugin.SettingsPlugin):
+                octoprint.plugin.SettingsPlugin,
+                octoprint.plugin.AssetPlugin):
     def on_after_startup(self):
         self._logger.info("Print Cost loaded (more: %s)" % self._settings.get(["cost"]))
 
@@ -18,11 +19,14 @@ class PrintCost(octoprint.plugin.StartupPlugin,
 
     def get_template_configs(self):
         return [
-            dict(type="tab", name="Cost", custom_bindings=False),
+            dict(type="tab", name="Cost"),
             dict(type="settings", custom_bindings=False)
         ]
 
-
+    def get_assets(self):
+        return dict(
+            js=["js/printcost.js"]
+        )
 
 # If you want your plugin to be registered within OctoPrint under a different name than what you defined in setup.py
 # ("OctoPrint-PluginSkeleton"), you may define that here. Same goes for the other metadata derived from setup.py that
