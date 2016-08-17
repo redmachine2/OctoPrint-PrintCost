@@ -16,7 +16,7 @@ class PrintCost(octoprint.plugin.StartupPlugin,
     def get_settings_defaults(self):
         return dict(cost=0.0666)
 
-    def get_template_configs(selfself):
+    def get_template_configs(self):
         return [
             dict(type="tab", name="Cost", custom_bindings=False),
             dict(type="settings", custom_bindings=False)
