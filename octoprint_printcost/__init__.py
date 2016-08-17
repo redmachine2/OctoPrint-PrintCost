@@ -7,12 +7,13 @@ from __future__ import absolute_import
 
 import octoprint.plugin
 
-class SkeletonPlugin(octoprint.plugin.TemplatePlugin):
-	# TODO Implement me!
-	pass
+class PrintCost(octoprint.plugin.TemplatePlugin,
+                octoprint.plugin.StartupPlugin):
+    def on_after_startup(self):
+        self._logger.info("Print Cost loaded")
 
 # If you want your plugin to be registered within OctoPrint under a different name than what you defined in setup.py
 # ("OctoPrint-PluginSkeleton"), you may define that here. Same goes for the other metadata derived from setup.py that
 # can be overwritten via __plugin_xyz__ control properties. See the documentation for that.
-__plugin_name__ = "Plugin Skeleton"
-__plugin_implementation__ = SkeletonPlugin()
+__plugin_name__ = "Print Cost"
+__plugin_implementation__ = PrintCost()
