@@ -13,14 +13,14 @@ class PrintCost(octoprint.plugin.StartupPlugin,
     def on_after_startup(self):
         self._logger.info("Print Cost loaded")
 
-    def get_template_configs(selfself):
-        return [
-            dict(type="tab", name="Cost"),
-            dict(type="settings", custom_bindings=False)
-        ]
-
     def get_settings_default(self):
         return dict(cost=0.0666)
+
+    def get_template_configs(selfself):
+        return [
+            dict(type="tab", name="Cost", custom_bindings=False),
+            dict(type="settings", custom_bindings=False)
+        ]
 
 
 
