@@ -6,12 +6,16 @@
 		<th style="width: 20%">Filament Usage</th>
 		<th style="width: 20%">Cost</th>
 	</tr>
-	<tbody>
+	<tbody data-bind="foreach: listHelper.paginatedItems">
 		<tr>
-			<td>Filename</td>
-			<td>Print Time</td>
-			<td>Filament Usage</td>
-			<td>Cost</td>
+			<td>
+				<span data-bind="text: fileName, attr: { title: fileName }"></span>
+				<a href="#" class="icon-pencil" data-bind="editable: note, editableOptions: {display: false, pk: key, url: 'plugin/printhistory/savenote', success: $root.requestData, error: function(){alert('grr')}}, visible: $root.loginState.isUser() && !$root.isPrinting()" title="Add/edit note"></a>
+				<div class="printhistory-note"><small data-bind="text: note"></small></div>
+			</td>
+			<td style="text-align: center;" data-bind="text: formatDuration(printTime)"></td>
+			<td style="text-align: center;" data-bind="html: filamentUsage"></td>
+			<td style="text-align: center;" data-bind="html: filamentCost"></td>
 		</tr>
 	</tbody>
 </table>
