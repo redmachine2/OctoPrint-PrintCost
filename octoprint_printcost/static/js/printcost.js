@@ -176,8 +176,8 @@ $(function() {
 
 		self.calculateCost = function(length){
 			console.log("Cost - ", self.newCost(), "Length = ", length);
-			console.log("Cost = ", parseInt(self.newCost()) * parseInt(length));
-			return parseInt(self.newCost()) * parseInt(length);
+			console.log("Cost = ", parseFloat(self.newCost()) * parseFloat(length));
+			return parseFloat(self.newCost()) * parseFloat(length);
 		};
 
 		self.formatFilament = function(data) {
