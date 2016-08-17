@@ -175,6 +175,7 @@ $(function() {
 		};
 
 		self.calculateCost = function(length){
+			console.log(self.newCost, console.log(length))
 			return self.newCost * parseInt(length);
 		};
 
