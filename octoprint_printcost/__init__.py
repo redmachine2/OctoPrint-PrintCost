@@ -12,6 +12,11 @@ class PrintCost(octoprint.plugin.TemplatePlugin,
     def on_after_startup(self):
         self._logger.info("Print Cost loaded")
 
+    def get_template_confis(selfself):
+        return [
+            dict(type="tab", name="Cost")
+        ]
+
 # If you want your plugin to be registered within OctoPrint under a different name than what you defined in setup.py
 # ("OctoPrint-PluginSkeleton"), you may define that here. Same goes for the other metadata derived from setup.py that
 # can be overwritten via __plugin_xyz__ control properties. See the documentation for that.
