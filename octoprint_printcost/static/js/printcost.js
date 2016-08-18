@@ -175,7 +175,7 @@ $(function() {
 		};
 
 		self.calculateCost = function(length){
-			return (parseFloat(self.newCost()) * parseFloat(length)).toFixed(2);
+			return +(parseFloat(self.newCost()) * parseFloat(length)).toFixed(2);
 		};
 
 		self.formatFilament = function(data) {
