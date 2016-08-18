@@ -157,20 +157,20 @@ $(function() {
 					if (self.pureData[key].hasOwnProperty('filamentLength')) {
 						totalUsage["length"] += self.pureData[key].filamentLength;
 						totalUsage["volume"] += self.pureData[key].filamentVolume;
-						totalCost += self.calculateCost(self.pureData[key].filamentLength);
+						// totalCost += self.calculateCost(self.pureData[key].filamentLength);
 					}
 
 					if (self.pureData[key].hasOwnProperty('filamentLength2')) {
 						totalUsage["length"] += self.pureData[key].filamentLength2;
 						totalUsage["volume"] += self.pureData[key].filamentVolume2;
-						totalCost += self.calculateCost(self.pureData[key].filamentLength2);
+						// totalCost += self.calculateCost(self.pureData[key].filamentLength2);
 					}
 				}
 			});
 
 			self.totalTime(formatDuration(totalTime));
 			self.totalUsage(formatFilament(totalUsage));
-			self.totalCost(totalCost);
+			self.totalCost(self.calculateCost(totalUsage["length"]));
 
 			self.listHelper.updateItems(dataRows);
 
