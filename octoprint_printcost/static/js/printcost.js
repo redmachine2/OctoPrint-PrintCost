@@ -9,6 +9,7 @@ $(function() {
 
 		self.totalTime = ko.observable();
 		self.totalUsage = ko.observable();
+		self.totalCost = ko.observable();
 		self.isPrinting = ko.observable();
 		self.pureData = {};
 		self.newCost = ko.observable();
@@ -169,6 +170,7 @@ $(function() {
 
 			self.totalTime(formatDuration(totalTime));
 			self.totalUsage(formatFilament(totalUsage));
+			self.totalCost(totalCost);
 
 			self.listHelper.updateItems(dataRows);
 
